@@ -61,4 +61,20 @@ class TestLibrary < MiniTest::Test
     assert_equal(nil, library.show_rental_details("flying_over_cuckoo's_nest"))
   end
 
+  #the one where the title is not there yet
+  def test_add_new_book_not_found
+    library = Library.new
+    library.add_new_book("harry_potter")
+    assert_equal(4, library.books.length)
+  end
+
+  #the one where the title is in there already
+  def test_add_new_book_not_found
+    library = Library.new
+    library.add_new_book("hobbit")
+    assert_equal(3, library.books.length)
+  end
+
+
+
 end
