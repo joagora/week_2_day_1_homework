@@ -17,7 +17,7 @@ class Team
     return @players.include?(player_name)
   end
 
-  def win
-    @points += 1
+  def add_points result
+    @points += 1 if result == "win"
   end
 end

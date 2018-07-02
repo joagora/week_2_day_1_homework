@@ -49,7 +49,7 @@ class TestStudent < MiniTest::Test
   def test_add_points
     players = ["Butterfly", "Fly", "Caterpillar"]
     team = Team.new("Moth hunters", players, "Bird")
-    team.win
+    team.add_points("win")
     assert_equal(1, team.points)
   end
 
