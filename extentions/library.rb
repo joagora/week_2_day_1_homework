@@ -59,6 +59,16 @@ class Library
       }
     }
     @books << book
+  end
 
+  def set_rental_details title, person, date
+    for book in @books
+      if book[:title] == title
+        book[:rental_details] = {
+          student_name: person,
+          date: date
+        }
+      end
+    end
   end
 end

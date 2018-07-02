@@ -69,12 +69,24 @@ class TestLibrary < MiniTest::Test
   end
 
   #the one where the title is in there already
-  def test_add_new_book_not_found
+  def test_add_new_book_found
     library = Library.new
     library.add_new_book("hobbit")
     assert_equal(3, library.books.length)
   end
 
-
+  def test_set_rental_details
+    library = Library.new
+    details = {
+      title: "hobbit",
+      rental_details: {
+        student_name: "Amelia",
+        date: "01/02/19"
+      }
+    }
+    books = library.books
+    library.set_rental_details("hobbit", "Amelia", "01/02/19")
+    assert_equal(details, library.show_book("hobbit"))
+  end
 
 end
