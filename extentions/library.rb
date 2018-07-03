@@ -1,28 +1,6 @@
 class Library
-  def initialize
-    @books = [
-      {
-        title: "lord_of_the_rings",
-        rental_details: {
-          student_name: "Jeff",
-          date: "01/12/16"
-        }
-      },
-      {
-        title: "everything_is_illuminated",
-        rental_details: {
-          student_name: "Barry",
-          date: "05/12/17"
-        }
-      },
-      {
-        title: "hobbit",
-        rental_details: {
-          student_name: "Roger",
-          date: "01/04/18"
-        }
-      }
-    ]
+  def initialize books
+    @books = books
   end
 
   def books
